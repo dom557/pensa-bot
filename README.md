@@ -28,7 +28,7 @@ Ensure you have the following installed:
 
 1. Clone the repo:
     ```bash
-    git clone https://github.com/dom557/pensa-bot.git
+    git clone repo-url
     ```
 2. Navigate to the project directory:
     ```bash
