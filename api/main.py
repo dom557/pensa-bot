@@ -43,6 +43,12 @@ async def on_message(message):
         # Send AI's response
         await message.channel.send(reply)
 
+def handler(request):
+    TOKEN = os.getenv("DISCORD_BOT_TOKEN")
+    if not bot.is_closed():
+        bot.run(TOKEN)
+    return 'Bot is running'
+
 if __name__ == "__main__":
     TOKEN = os.getenv("DISCORD_BOT_TOKEN")
     bot.run(TOKEN)
