@@ -12,8 +12,8 @@ logging.basicConfig(level=logging.INFO)
 # Load environment variables from .env file
 load_dotenv()
 
-# Set up the Hugging Face pipeline for text generation
-generator = pipeline('text-generation', model='gpt2')
+# Set up the Hugging Face pipeline for text generation with GPT-2
+generator = pipeline('text-generation', model='gpt2')  # Adjust device if needed
 set_seed(42)
 
 # Set up discord.py bot with commands extension
@@ -35,8 +35,8 @@ async def on_message(message):
         question = message.content[len('!ask'):].strip()
         logging.info(f"{question}")
 
-        # Generate response using Hugging Face Transformers
-        response = generator(question, max_length=50, num_return_sequences=1)
+        # Generate response using Hugging Face Transformers with GPT-2
+        response = generator(question, max_length=80, num_return_sequences=1, temperature=1)  # Adjust temperature here
         reply = response[0]['generated_text'].strip()
         logging.info(f"AI response: {reply}")
 
