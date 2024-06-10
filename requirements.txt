@@ -1,0 +1,4 @@
+discord.py
+transformers
+torch
+dotenv
